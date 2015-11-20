@@ -19,6 +19,15 @@ io.on('connection', function(socket){
 		tweetArray[msg].stop();
 		delete tweetArray[msg];
 	});
+	socket.on('app init', function(msg){
+		if (Object.keys(tweetArray).length > 0){
+			for (var property in tweetArray) {
+				if (tweetArray.hasOwnProperty(property)) {
+					socket.emit('tracking hashtag',property);
+				}
+			}
+		}
+	});
 });
 
 http.listen(config.server.port, function(){

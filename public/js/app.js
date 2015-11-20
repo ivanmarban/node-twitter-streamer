@@ -6,14 +6,7 @@ $('#track').submit(function(e) {
 	if (hashtag != '') {
 		socket.emit('track hashtag', hashtag);
 		$('#hashtag').val('');
-		var link = '<a class="close" data-dismiss="alert" id="' + hashtag + '" href="#">&times;</a><p>&num;' + hashtag + '</p>';
-		$('<div class="alert alert-info" id="' + hashtag + '"></div>').html(link)
-			.prependTo('#tracked-hashtags')
-			.css({
-				opacity : 0
-			}).slideDown('slow').animate({
-				opacity : 1
-			}, 'slow');
+		addHashtag(hashtag);
 	}
 	return false;
 });
@@ -32,6 +25,23 @@ socket.on('new tweet', function(tweet) {
 		}, 'slow');
 });
 
-$('#tracked-hashtags').delegate('a', 'click', function() {
+socket.on('tracking hashtag', function(hashtag) {
+	addHashtag(hashtag);
+});
+
+$('#tracking-hashtags').delegate('a', 'click', function() {
 	socket.emit('untrack hashtag', $(this).attr('id'));
 });
+
+socket.emit('app init');
+
+function addHashtag(hashtag){
+	var link = '<a class="close" data-dismiss="alert" id="' + hashtag + '" href="#">&times;</a><p>&num;' + hashtag + '</p>';
+	$('<div class="alert alert-info" id="' + hashtag + '"></div>').html(link)
+		.prependTo('#tracked-hashtags')
+		.css({
+			opacity : 0
+		}).slideDown('slow').animate({
+			opacity : 1
+		}, 'slow');
+}
