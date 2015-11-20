@@ -38,7 +38,7 @@ socket.emit('app init');
 function addHashtag(hashtag){
 	var link = '<a class="close" data-dismiss="alert" id="' + hashtag + '" href="#">&times;</a><p>&num;' + hashtag + '</p>';
 	$('<div class="alert alert-info" id="' + hashtag + '"></div>').html(link)
-		.prependTo('#tracked-hashtags')
+		.prependTo('#tracking-hashtags')
 		.css({
 			opacity : 0
 		}).slideDown('slow').animate({
