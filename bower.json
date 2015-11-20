@@ -1,0 +1,29 @@
+{
+  "name": "node-twitter-streamer",
+  "version": "0.1.0",
+  "authors": [
+    "Ivan Marban"
+  ],
+  "description": "A twitter streaming app using Node.js and Socket.io",
+  "main": "index.html",
+  "keywords": [
+    "jquery",
+    "bootstrap",
+    "twitter",
+	  "socket.io",
+    "nodejs"
+  ],
+  "license": "GNU",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "socket.io-client": "~1.3.7"
+  }
+}
