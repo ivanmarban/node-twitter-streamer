@@ -10,7 +10,7 @@ A real-time twitter streaming webapp using Node.js and Socket.io
 ## Installation
 Clone this repository and install node and bower dependencies
 ```sh
-$ git clone git@github.com:ivanmarban/node-twitter-streamer.git
+$ git clone https://github.com/ivanmarban/node-twitter-streamer.git
 $ cd node-twitter-streamer
 $ npm install
 $ bower install
