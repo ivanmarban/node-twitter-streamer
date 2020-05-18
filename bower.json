@@ -10,7 +10,7 @@
     "jquery",
     "bootstrap",
     "twitter",
-	  "socket.io",
+    "socket.io",
     "nodejs"
   ],
   "license": "GNU",
